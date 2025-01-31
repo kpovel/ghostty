@@ -488,12 +488,6 @@ vertex CellTextVertexOut cell_text_vertex(
     );
   }
 
-  // Don't bother rendering if the bg and fg colors are identical, just return
-  // the same point which will be culled because it makes the quad zero sized.
-  if (all(out.color == out.bg_color)) {
-    out.position = float4(0.0);
-  }
-
   return out;
 }
 
